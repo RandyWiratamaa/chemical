@@ -111,7 +111,7 @@
                         <nav id="left-sidebar-nav" class="sidebar-nav">
                             <ul id="main-menu" class="metismenu animation-li-delay">
                                 <li class="header">Main</li>
-                                <li><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                                <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                                 <li class="header">Data Master</li>
                                 <li><a href="{{ route('barang') }}"><i class="fa fa-tasks"></i> <span>Data Unit</span></a></li>
                                 <li><a href="{{ route('satuan') }}"><i class="fa fa-th-list"></i> <span>Satuan</span></a></li>
