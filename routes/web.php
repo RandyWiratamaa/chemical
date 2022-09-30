@@ -16,6 +16,8 @@ Route::get('/satuan', [App\Http\Controllers\SatuanController::class, 'index'])->
 Route::post('/satuan', [App\Http\Controllers\SatuanController::class, 'store'])->name('satuan.store');
 
 Route::post('/home', [App\Http\Controllers\HomeController::class, 'store'])->name('laporan.store');
+Route::match(['put', 'patch'], '/home/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('laporan.update');
+Route::delete('/home/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('laporan.delete');
 Route::get('getDetailBarang/{id}', [App\Http\Controllers\HomeController::class, 'getDetailBarang'])->name('getDetailBarang');
 
 Route::get('laporan_export', [App\Http\Controllers\HomeController::class, 'exportLaporan'])->name('laporan_export');

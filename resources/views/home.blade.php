@@ -78,7 +78,7 @@
                                             <button class="btn btn-success gradient" id="edit" title="Edit Data" data-toggle="modal" data-target="#editLaporan{{ $i->id }}">
                                                 <i class="fa fa-pencil"></i>
                                             </button>
-                                            <button class="btn btn-warning gradient" title="Hapus Data">
+                                            <button class="btn btn-warning gradient" id="hapus" data-toggle="modal" data-target="#hapusLaporan{{ $i->id }}" title="Hapus Data">
                                                 <i class="fa fa-trash"></i>
                                             </button>
                                         </td>

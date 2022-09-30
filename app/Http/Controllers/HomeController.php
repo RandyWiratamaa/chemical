@@ -74,4 +74,33 @@ class HomeController extends Controller
     {
         return Excel::download(new LaporanExport, 'laporan.xlsx');
     }
+
+    public function update(Request $req, $id)
+    {
+        $cari = Laporan::firstWhere('id', $id);
+        $cari->barang_id = $req->barang_id;
+        $cari->desc = $req->desc;
+        $cari->soh = $req->soh;
+        $cari->ospo = $req->ospo;
+        $cari->ospr = $req->ospr;
+        $cari->ketahanan_stock = $req->ketahanan_stock;
+        $cari->lead_time = $req->lead_time;
+        $cari->indikator = $req->indikator;
+        $cari->ket = $req->ket;
+        $cari->konsumsi = $req->konsumsi;
+        $cari->save();
+        if ($cari) {
+            return redirect()->route('home');
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function destroy($id)
+    {
+        $laporan = Laporan::findOrFail($id);
+        $laporan->delete();
+
+        return redirect()->route('home');
+    }
 }

@@ -206,11 +206,10 @@
         </script>
 
         <script>
-            $(document).ready( function () {
-                $('#chemical').DataTable();
-            } );
-            $('#barang_id_edit').change(function(){
+            $('.barang_id_edit').change(function(){
                 var id = $(this).val();
+                // alert(id);
+                // console.log(id);
                 var url = '{{ route("getDetailBarang", ":id") }}';
                 url = url.replace(':id', id);
 
@@ -220,58 +219,58 @@
                     dataType: 'json',
                     success: function(response) {
                         if(response !== null) {
-                            $('#kimap_edit').val(response.kimap);
-                            $('#satuan_edit').val(response.satuan.name);
+                            $('.kimap_edit').val(response.kimap);
+                            $('.satuan_edit').val(response.satuan.name);
                         }
                     }
                 });
             });
-            $(document).on('change', '#soh_edit',function(){
-                var ketahanan_edit = ((parseInt($('#soh_edit').val())+parseInt($('#ospr_edit').val())+parseInt($('#ospo_edit').val()))/parseInt($('#konsumsi_edit').val())) * 30
-                $('#ketahanan_stock_edit').val(ketahanan_edit);
+            $(document).on('change', '.soh_edit',function(){
+                var ketahanan_edit = ((parseInt($('.soh_edit').val())+parseInt($('.ospr_edit').val())+parseInt($('.ospo_edit').val()))/parseInt($('.konsumsi_edit').val())) * 30
+                $('.ketahanan_stock_edit').val(ketahanan_edit);
                 var danger = "Stock Kurang dari 30";
                 var warning = "Stock Mendekati 30";
                 var aman = "Stock Aman";
-                if(parseInt($('#ketahanan_stock_edit').val()) < 30){
-                    $('#ket_edit').val(danger)
-                } else if(parseInt($('#ketahanan_stock_edit').val()) < 50){
-                    $('#ket_edit').val(warning)
+                if(parseInt($('.ketahanan_stock_edit').val()) < 30){
+                    $('.ket_edit').val(danger)
+                } else if(parseInt($('.ketahanan_stock_edit').val()) < 50){
+                    $('.ket_edit').val(warning)
                 } else {
-                    $('#ket_edit').val(aman)
+                    $('.ket_edit').val(aman)
                 }
             });
-            $(document).on('change', '#ospr_edit',function(){
-                var ketahanan = ((parseInt($('#soh_edit').val())+parseInt($('#ospr_edit').val())+parseInt($('#ospo_edit').val()))/parseInt($('#konsumsi_edit').val())) * 30
-                $('#ketahanan_stock_edit').val(ketahanan);
+            $(document).on('change', '.ospr_edit',function(){
+                var ketahanan = ((parseInt($('.soh_edit').val())+parseInt($('.ospr_edit').val())+parseInt($('.ospo_edit').val()))/parseInt($('.konsumsi_edit').val())) * 30
+                $('.ketahanan_stock_edit').val(ketahanan);
                 var danger = "Stock Kurang dari 30";
                 var warning = "Stock Mendekati 30";
                 var aman = "Stock Aman";
-                if(parseInt($('#ketahanan_stock_edit').val()) < 30){
+                if(parseInt($('.ketahanan_stock_edit').val()) < 30){
                     $('#ket_edit').val(danger)
-                } else if(parseInt($('#ketahanan_stock_edit').val()) < 50){
-                    $('#ket_edit').val(warning)
+                } else if(parseInt($('.ketahanan_stock_edit').val()) < 50){
+                    $('.ket_edit').val(warning)
                 } else {
-                    $('#ket_edit').val(aman)
+                    $('.ket_edit').val(aman)
                 }
             });
-            $(document).on('change', '#ospo_edit',function(){
-                var ketahanan = ((parseInt($('#soh_edit').val())+parseInt($('#ospr_edit').val())+parseInt($('#ospo_edit').val()))/parseInt($('#konsumsi_edit').val())) * 30
-                $('#ketahanan_stock_edit').val(ketahanan);
+            $(document).on('change', '.ospo_edit',function(){
+                var ketahanan = ((parseInt($('.soh_edit').val())+parseInt($('.ospr_edit').val())+parseInt($('.ospo_edit').val()))/parseInt($('.konsumsi_edit').val())) * 30
+                $('.ketahanan_stock_edit').val(ketahanan);
                 var danger = "Stock Kurang dari 30";
                 var warning = "Stock Mendekati 30";
                 var aman = "Stock Aman";
-                if(parseInt($('#ketahanan_stock_edit').val()) < 30){
-                    $('#ket_edit').val(danger)
-                } else if(parseInt($('#ketahanan_stock_edit').val()) < 50){
-                    $('#ket_edit').val(warning)
+                if(parseInt($('.ketahanan_stock_edit').val()) < 30){
+                    $('.ket_edit').val(danger)
+                } else if(parseInt($('.ketahanan_stock_edit').val()) < 50){
+                    $('.ket_edit').val(warning)
                 } else {
-                    $('#ket_edit').val(aman)
+                    $('.ket_edit').val(aman)
                 }
             });
 
-            $(document).on('change', '#lead_time_edit', function(){
-                var indikator = (parseInt($('#ketahanan_stock_edit').val())/parseInt($('#lead_time_edit').val()))
-                $('#indikator_edit').val(indikator);
+            $(document).on('change', '.lead_time_edit', function(){
+                var indikator = (parseInt($('.ketahanan_stock_edit').val())/parseInt($('.lead_time_edit').val()))
+                $('.indikator_edit').val(indikator);
             })
         </script>
     </body>
