@@ -93,7 +93,7 @@
                                 <span>Web Developer,</span>
                                 <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{ Auth::user()->name }}</strong></a>
                                 <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
-                                    <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
+                                    <li><a href="{{ route('profile.index') }}"><i class="fa fa-user"></i>My Profile</a></li>
                                     <li><a href="#"><i class="fa fa-envelope"></i>Messages</a></li>
                                     <li><a href="#"><i class="fa fa-gear"></i>Settings</a></li>
                                     <li class="divider"></li>

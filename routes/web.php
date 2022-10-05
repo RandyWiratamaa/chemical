@@ -21,3 +21,6 @@ Route::delete('/home/{id}', [App\Http\Controllers\HomeController::class, 'destro
 Route::get('getDetailBarang/{id}', [App\Http\Controllers\HomeController::class, 'getDetailBarang'])->name('getDetailBarang');
 
 Route::get('laporan_export', [App\Http\Controllers\HomeController::class, 'exportLaporan'])->name('laporan_export');
+
+Route::get('profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile.index');
+Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
