@@ -84,7 +84,7 @@
                         <div class="col-4">
                             <div class="form-group c_form_group">
                                 <label>Indikator</label>
-                                <input type="number" name="indikator" class="form-control" id="indikator">
+                                <input type="text" name="indikator" class="form-control" id="indikator">
                             </div>
                         </div>
                     </div>
@@ -193,7 +193,7 @@
                         <div class="col-4">
                             <div class="form-group c_form_group">
                                 <label>Indikator</label>
-                                <input type="number" name="indikator" class="form-control indikator_edit" id="indikator_edit" value="{{ $i->indikator }}">
+                                <input type="text" name="indikator" class="form-control indikator_edit" id="indikator_edit" value="{{ $i->indikator }}">
                             </div>
                         </div>
                     </div>

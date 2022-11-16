@@ -66,10 +66,10 @@
                                         <td>{{ strtoupper($i->indikator) }}</td>
                                         <td>{{ strtoupper($i->ket) }}</td>
                                         <td>
-                                            @if ($i->ketahanan_stock < 30)
-                                            <span class="badge badge-danger sub_n_category bg-red">Stock kurang 30</span>
-                                            @elseif($i->ketahanan_stock < 50)
-                                            <span class="badge badge-warning sub_n_category bg-orange">Stock mendekati 30</span>
+                                            @if ($i->lead_time < $i->soh)
+                                            <span class="badge badge-danger sub_n_category bg-red">Stock Kurang Aman</span>
+                                            @elseif($i->ketahanan_stock > $i->soh)
+                                            <span class="badge badge-warning sub_n_category bg-green">Stock Aman</span>
                                             @else
                                             <span class="badge badge-success sub_n_category bg-green">Stock Aman</span>
                                             @endif

@@ -158,7 +158,7 @@
                 });
             });
             $(document).on('change', '#soh',function(){
-                var ketahanan = ((parseInt($('#soh').val())+parseInt($('#ospr').val())+parseInt($('#ospo').val()))/parseInt($('#konsumsi').val())) * 30
+                var ketahanan = ((parseInt($('#soh').val()))/parseInt($('#konsumsi').val()))
                 $('#ketahanan_stock').val(ketahanan);
                 var danger = "Stock Kurang dari 30";
                 var warning = "Stock Mendekati 30";
@@ -171,34 +171,34 @@
                     $('#ket').val(aman)
                 }
             });
-            $(document).on('change', '#ospr',function(){
-                var ketahanan = ((parseInt($('#soh').val())+parseInt($('#ospr').val())+parseInt($('#ospo').val()))/parseInt($('#konsumsi').val())) * 30
-                $('#ketahanan_stock').val(ketahanan);
-                var danger = "Stock Kurang dari 30";
-                var warning = "Stock Mendekati 30";
-                var aman = "Stock Aman";
-                if(parseInt($('#ketahanan_stock').val()) < 30){
-                    $('#ket').val(danger)
-                } else if(parseInt($('#ketahanan_stock').val()) < 50){
-                    $('#ket').val(warning)
-                } else {
-                    $('#ket').val(aman)
-                }
-            });
-            $(document).on('change', '#ospo',function(){
-                var ketahanan = ((parseInt($('#soh').val())+parseInt($('#ospr').val())+parseInt($('#ospo').val()))/parseInt($('#konsumsi').val())) * 30
-                $('#ketahanan_stock').val(ketahanan);
-                var danger = "Stock Kurang dari 30";
-                var warning = "Stock Mendekati 30";
-                var aman = "Stock Aman";
-                if(parseInt($('#ketahanan_stock').val()) < 30){
-                    $('#ket').val(danger)
-                } else if(parseInt($('#ketahanan_stock').val()) < 50){
-                    $('#ket').val(warning)
-                } else {
-                    $('#ket').val(aman)
-                }
-            });
+            // $(document).on('change', '#ospr',function(){
+            //     var ketahanan = ((parseInt($('#soh').val())+parseInt($('#ospr').val())+parseInt($('#ospo').val()))/parseInt($('#konsumsi').val())) * 30
+            //     $('#ketahanan_stock').val(ketahanan);
+            //     var danger = "Stock Kurang dari 30";
+            //     var warning = "Stock Mendekati 30";
+            //     var aman = "Stock Aman";
+            //     if(parseInt($('#ketahanan_stock').val()) < 30){
+            //         $('#ket').val(danger)
+            //     } else if(parseInt($('#ketahanan_stock').val()) < 50){
+            //         $('#ket').val(warning)
+            //     } else {
+            //         $('#ket').val(aman)
+            //     }
+            // });
+            // $(document).on('change', '#ospo',function(){
+            //     var ketahanan = ((parseInt($('#soh').val())+parseInt($('#ospr').val())+parseInt($('#ospo').val()))/parseInt($('#konsumsi').val())) * 30
+            //     $('#ketahanan_stock').val(ketahanan);
+            //     var danger = "Stock Kurang dari 30";
+            //     var warning = "Stock Mendekati 30";
+            //     var aman = "Stock Aman";
+            //     if(parseInt($('#ketahanan_stock').val()) < 30){
+            //         $('#ket').val(danger)
+            //     } else if(parseInt($('#ketahanan_stock').val()) < 50){
+            //         $('#ket').val(warning)
+            //     } else {
+            //         $('#ket').val(aman)
+            //     }
+            // });
             $(document).on('change', '#lead_time', function(){
                 var indikator = (parseInt($('#ketahanan_stock').val())/parseInt($('#lead_time').val()))
                 $('#indikator').val(indikator);
@@ -226,7 +226,7 @@
                 });
             });
             $(document).on('change', '.soh_edit',function(){
-                var ketahanan_edit = ((parseInt($('.soh_edit').val())+parseInt($('.ospr_edit').val())+parseInt($('.ospo_edit').val()))/parseInt($('.konsumsi_edit').val())) * 30
+                var ketahanan_edit = ((parseInt($('.soh_edit').val()))/parseInt($('.konsumsi_edit').val()))
                 $('.ketahanan_stock_edit').val(ketahanan_edit);
                 var danger = "Stock Kurang dari 30";
                 var warning = "Stock Mendekati 30";
@@ -239,34 +239,34 @@
                     $('.ket_edit').val(aman)
                 }
             });
-            $(document).on('change', '.ospr_edit',function(){
-                var ketahanan = ((parseInt($('.soh_edit').val())+parseInt($('.ospr_edit').val())+parseInt($('.ospo_edit').val()))/parseInt($('.konsumsi_edit').val())) * 30
-                $('.ketahanan_stock_edit').val(ketahanan);
-                var danger = "Stock Kurang dari 30";
-                var warning = "Stock Mendekati 30";
-                var aman = "Stock Aman";
-                if(parseInt($('.ketahanan_stock_edit').val()) < 30){
-                    $('#ket_edit').val(danger)
-                } else if(parseInt($('.ketahanan_stock_edit').val()) < 50){
-                    $('.ket_edit').val(warning)
-                } else {
-                    $('.ket_edit').val(aman)
-                }
-            });
-            $(document).on('change', '.ospo_edit',function(){
-                var ketahanan = ((parseInt($('.soh_edit').val())+parseInt($('.ospr_edit').val())+parseInt($('.ospo_edit').val()))/parseInt($('.konsumsi_edit').val())) * 30
-                $('.ketahanan_stock_edit').val(ketahanan);
-                var danger = "Stock Kurang dari 30";
-                var warning = "Stock Mendekati 30";
-                var aman = "Stock Aman";
-                if(parseInt($('.ketahanan_stock_edit').val()) < 30){
-                    $('.ket_edit').val(danger)
-                } else if(parseInt($('.ketahanan_stock_edit').val()) < 50){
-                    $('.ket_edit').val(warning)
-                } else {
-                    $('.ket_edit').val(aman)
-                }
-            });
+            // $(document).on('change', '.ospr_edit',function(){
+            //     var ketahanan = ((parseInt($('.soh_edit').val())+parseInt($('.ospr_edit').val())+parseInt($('.ospo_edit').val()))/parseInt($('.konsumsi_edit').val())) * 30
+            //     $('.ketahanan_stock_edit').val(ketahanan);
+            //     var danger = "Stock Kurang dari 30";
+            //     var warning = "Stock Mendekati 30";
+            //     var aman = "Stock Aman";
+            //     if(parseInt($('.ketahanan_stock_edit').val()) < 30){
+            //         $('#ket_edit').val(danger)
+            //     } else if(parseInt($('.ketahanan_stock_edit').val()) < 50){
+            //         $('.ket_edit').val(warning)
+            //     } else {
+            //         $('.ket_edit').val(aman)
+            //     }
+            // });
+            // $(document).on('change', '.ospo_edit',function(){
+            //     var ketahanan = ((parseInt($('.soh_edit').val())+parseInt($('.ospr_edit').val())+parseInt($('.ospo_edit').val()))/parseInt($('.konsumsi_edit').val())) * 30
+            //     $('.ketahanan_stock_edit').val(ketahanan);
+            //     var danger = "Stock Kurang dari 30";
+            //     var warning = "Stock Mendekati 30";
+            //     var aman = "Stock Aman";
+            //     if(parseInt($('.ketahanan_stock_edit').val()) < 30){
+            //         $('.ket_edit').val(danger)
+            //     } else if(parseInt($('.ketahanan_stock_edit').val()) < 50){
+            //         $('.ket_edit').val(warning)
+            //     } else {
+            //         $('.ket_edit').val(aman)
+            //     }
+            // });
 
             $(document).on('change', '.lead_time_edit', function(){
                 var indikator = (parseInt($('.ketahanan_stock_edit').val())/parseInt($('.lead_time_edit').val()))
